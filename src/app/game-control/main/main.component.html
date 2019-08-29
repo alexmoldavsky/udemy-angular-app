@@ -1,0 +1,13 @@
+<h3>Bindings Game</h3>
+<app-game-control (numberRecieved)="onNumberRecieved($event)"></app-game-control>
+
+<ul>
+    <li *ngFor="let item of numbers">
+        <app-even *ngIf="(item % 2 === 0); else elseTemplate" [newNum]="item"></app-even>
+        <ng-template #elseTemplate>
+            <app-odd [newNum]="item"></app-odd>
+        </ng-template>
+    </li>
+</ul>
+
+

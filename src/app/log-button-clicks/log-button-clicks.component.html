@@ -1,0 +1,10 @@
+<button type="button" class="btn btn-primary" (click)="onButtonClick()">{{ buttonCaption }}</button>
+<p *ngIf="buttonClicked === true">Hidden content</p>
+<ul class="list-group">
+    <li class="list-group-item" 
+        *ngFor="let item of clicksArr; let i = index" 
+        [ngClass]="{'active': i >= 4}" 
+        [ngStyle]="{backgroundColor: getBackground(i)}">
+        {{ item }}
+    </li>
+</ul>
